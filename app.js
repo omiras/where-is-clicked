@@ -5,9 +5,9 @@ let map = document.querySelector(".map");
 map.addEventListener("click", function (event) {
   //2. En el objeto event tenemos dos propeidades interesantes: las coordenadas X e Y donde hemos hecho click.
 
-  // Del objeto event, guardamos el valro de las propiedades x e y
-  let x = event.x;
-  let y = event.y;
+  // Del objeto event, guardamos el valro de las propiedades pageX y pageY
+  let x = event.pageX;
+  let y = event.pageY;
 
   // Invocamos la función drawCross, y le pasamos el valor de las variables anteriores
   drawCross(x, y);
