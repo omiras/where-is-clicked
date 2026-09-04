@@ -11,7 +11,7 @@ map.addEventListener("click", function (event) {
   drawCross(x, y, map);
 });
 
-function drawCross(x, y, container = document.body) {
+function drawCross(x, y, container) {
   // Creamos un elemento div para la primera línea
   const line1 = document.createElement("div");
   line1.style.position = "absolute";
