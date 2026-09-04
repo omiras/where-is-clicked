@@ -3,17 +3,15 @@
 let map = document.querySelector(".map");
 
 map.addEventListener("click", function (event) {
-  //2. En el objeto event tenemos dos propeidades interesantes: las coordenadas X e Y donde hemos hecho click.
-
-  // Del objeto event, guardamos el valro de las propiedades pageX y pageY
-  let x = event.pageX;
-  let y = event.pageY;
+  const mapRect = map.getBoundingClientRect();
+  const x = event.clientX - mapRect.left;
+  const y = event.clientY - mapRect.top;
 
   // Invocamos la función drawCross, y le pasamos el valor de las variables anteriores
-  drawCross(x, y);
+  drawCross(x, y, map);
 });
 
-function drawCross(x, y) {
+function drawCross(x, y, container = document.body) {
   // Creamos un elemento div para la primera línea
   const line1 = document.createElement("div");
   line1.style.position = "absolute";
@@ -22,7 +20,7 @@ function drawCross(x, y) {
   line1.style.height = "20px";
   line1.style.left = x + "px";
   line1.style.top = y - 10 + "px";
-  document.body.appendChild(line1);
+  container.appendChild(line1);
 
   // Creamos un elemento div para la segunda línea
   const line2 = document.createElement("div");
@@ -32,5 +30,5 @@ function drawCross(x, y) {
   line2.style.height = "2px";
   line2.style.left = x - 10 + "px";
   line2.style.top = y + "px";
-  document.body.appendChild(line2);
+  container.appendChild(line2);
 }
