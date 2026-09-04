@@ -1,4 +1,9 @@
-// Recuerda todas las propiedades que tiene el objeto event !
+// Aquí tu código
+
+
+
+
+// No modificar a partir de aquí
 
 function drawCross(x, y) {
   // Creamos un elemento div para la primera línea
